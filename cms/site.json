@@ -1,13 +1,13 @@
 {
   "template": "business",
   "name": "Picaffectz",
-  "version": 3,
+  "version": 4,
   "admin": "admin.html",
-  "exportedAt": "2026-11-14T21:44:12.228Z",
+  "exportedAt": "2026-11-15T06:19:02.886Z",
   "generator": "Site Studio",
   "studioBuild": {
-    "id": "67dee15",
-    "at": "2026-11-14T21:39:36.370Z"
+    "id": "81071a6",
+    "at": "2026-11-15T06:07:57.093Z"
   },
   "badge": "1ast6yy",
   "menu": {
