@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /admin.html
+Disallow: /cms/
+
+Sitemap: https://iprakashlal.github.io/picaffectz-bussiness-folio/sitemap.xml
