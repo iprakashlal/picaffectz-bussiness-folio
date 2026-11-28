@@ -3,11 +3,11 @@
   "name": "Picaffectz",
   "version": 47,
   "admin": "admin.html",
-  "exportedAt": "2026-11-28T00:13:20.035Z",
+  "exportedAt": "2026-11-28T17:28:15.437Z",
   "generator": "Site Studio",
   "studioBuild": {
-    "id": "2a78dcc",
-    "at": "2026-11-27T23:55:18.244Z"
+    "id": "bb1679c",
+    "at": "2026-11-28T17:16:55.553Z"
   },
   "badge": "1qt9bdp",
   "menu": {
@@ -83,5 +83,5 @@
     "studio": true
   },
   "menuV": "1dep38u",
-  "pdV": "16ffwui"
+  "pdV": "1fw88pz"
 }

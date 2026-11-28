@@ -269,7 +269,7 @@ function applyTheme(t) {
   r.setProperty("--fd", `"${t.fontDisplay}",Georgia,serif`); r.setProperty("--fb", `"${t.fontBody}","Helvetica Neue",Arial,sans-serif`);
   if (window.SiteFonts) { const cd = SiteFonts.use(t, "display", imgUrl), cb = SiteFonts.use(t, "body", imgUrl); if (cd) r.setProperty("--fd", `"${cd}","${t.fontDisplay}",Georgia,serif`); if (cb) r.setProperty("--fb", `"${cb}","${t.fontBody}","Helvetica Neue",Arial,sans-serif`); }
   const d = document.documentElement.dataset;
-  for (const k of ["layout", "heroArt", "nav", "cards", "buttons", "motionStyle", "pattern", "heading", "shead", "width", "bands", "cursor", "loader", "textfx", "hoverfx", "scrollfx", "overlay", "herofx", "loaderOn"]) d[k] = String(t[k] || "");
+  for (const k of ["look", "layout", "heroArt", "nav", "cards", "buttons", "motionStyle", "pattern", "heading", "shead", "width", "bands", "cursor", "loader", "textfx", "hoverfx", "scrollfx", "overlay", "herofx", "loaderOn"]) d[k] = String(t[k] || "");
   d.scrollease = t.scrollEase || "light"; d.linebreaks = t.lineBreaks || "typed"; d.menu = String(t.navMode || ""); d.menumob = String(t.navModeMob || "");
   d.crumbs = (C.site || {}).crumbs === false ? "off" : "on"; d.introfont = t.introFont || "display"; d.introcase = t.introCase || "upper"; d.dark = String(onColor(t.bg) === "#FFFFFF");
   const FOK = !(window.SiteFX && window.SiteFX.fontsOk) || window.SiteFX.fontsOk(C); // Google Fonts wait for consent when the site says so
@@ -615,7 +615,8 @@ const ckOn = () => !!(C.consent && C.consent.on && C.consent.footerLink !== fals
 /* Regional languages (assets/lang.js): the chosen language is put into the content before the page is drawn, then
    the page's fixed wording is translated and the language switcher added. */
 let lgP, lgFail = false;
-const langOn = () => { const n = C.i18n || {}; return !!n.on && (n.langs || []).some((l) => l && l.on !== false); };
+// Also loaded for the owner's own words for the page's fixed wording (content.words).
+const langOn = () => { const n = C.i18n || {}; return (!!n.on && (n.langs || []).some((l) => l && l.on !== false)) || (!!C.words && Object.values(C.words).some((v) => typeof v === "string" && v.trim())); };
 function langGate() {
   if (window.SiteLang) { if (PREVIEW) window.SiteLang.force((C.i18n || {}).preview || ""); window.SiteLang.apply(C); return false; }
   if (!langOn() || lgFail) return false;
